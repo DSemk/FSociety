@@ -5,8 +5,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
-import android.widget.Toast;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,21 +13,13 @@ import java.util.Map;
  */
 
 public class NotificationCenter extends Notification {
-
-
     private HashMap<String, Integer> modulStatusBase;
     private int activationModulsQuantity;
-
 
     public void getRulls(HashMap<String, Integer> map) {
         modulStatusBase = map;
         changePrametr();
     }
-
-    public NotificationCenter() {
-
-    }
-
 
     private void changePrametr() {
 
@@ -72,7 +62,8 @@ public class NotificationCenter extends Notification {
         nBuilder.setSmallIcon(R.drawable.ic_action_name);
 
         Notification notification = nBuilder.build();
-        nm = (NotificationManager) ModulsData.getInstance().getGlobalContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        nm = (NotificationManager) ModulsData.getInstance().
+                getGlobalContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         nm.notify(1, notification);
     }

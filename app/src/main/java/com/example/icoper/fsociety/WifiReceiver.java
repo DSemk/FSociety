@@ -18,9 +18,6 @@ public class WifiReceiver extends BroadcastReceiver {
     private Context wifiContext;
     private Intent wifiIntent;
 
-    private NotificationManager nm;
-    private NotificationCompat.Builder nBuilder;
-
     @Override
     public void onReceive(Context context, Intent intent) {
         this.wifiContext = context;
